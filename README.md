@@ -1,5 +1,7 @@
 # discourse-scroll-buttons
 
+https://github.com/ScottMastro/discourse-scroll-buttons
+
 This theme component adds buttons that enable efficient jumping to the beginning and end of topics.
 
 
