@@ -1,0 +1,20 @@
+timeline_buttons_enabled:
+  default: true
+  client: true
+
+mobile_buttons_enabled:
+  default: true
+  client: true
+
+jump_button_enabled:
+  default: true
+  client: true
+
+jump_button_label:
+  default: "Jump"
+  client: true
+  
+jump_button_title:
+  default: "jump to the top of this topic"
+  client: true
+  

@@ -1,0 +1,96 @@
+<script type="text/discourse-plugin" version="0.8">
+  const ajax = require('discourse/lib/ajax').ajax;
+  const { h } = require('virtual-dom');
+  const { iconNode } = require("discourse-common/lib/icon-library");
+  const { getOwner } = require("discourse-common/lib/get-owner");
+  const topicController = getOwner(this).lookup("controller:topic");
+
+  if(settings.timeline_buttons_enabled){
+
+    api.createWidget('scroll-up-button', {
+      tagName: 'widget-button.btn.btn-default.discourse-scroll-up-button.no-text.btn-icon',
+      html(attrs, state) {
+        return h('span', [iconNode('arrow-up')] );
+      },
+      click() {
+        topicController.send('jumpTop');
+      }
+    });
+
+    api.createWidget('scroll-down-button', {
+      tagName: 'widget-button.btn.btn-default.discourse-scroll-down-button.no-text.btn-icon',
+      html(attrs, state) {
+        return h('span', [iconNode('arrow-down')] );
+      },
+      click() {
+        topicController.send('jumpBottom');
+      }
+    }); 
+   
+    api.decorateWidget('timeline-footer-controls:before', function(helper) {
+      return helper.attach('scroll-up-button');
+    });
+    api.decorateWidget('timeline-footer-controls:before', function(helper) {
+      return helper.attach('scroll-down-button');
+    });
+  
+  }
+
+  if (settings.mobile_buttons_enabled){
+  
+    api.createWidget('mobile-scroll-up-button', {
+      tagName: 'widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-scroll-up-button',
+      html(attrs, state) {
+        return h('span', [iconNode('arrow-up')] );
+      },
+      click() {
+        topicController.send('jumpTop');
+      }
+    });
+
+    api.createWidget('mobile-scroll-down-button', {
+      tagName: 'widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-scroll-down-button',
+      html(attrs, state) {
+        return h('span', [iconNode('arrow-down')] );
+      },
+      click() {
+        topicController.send('jumpBottom');
+      }
+    }); 
+    
+  }
+  
+  if (settings.jump_button_enabled){
+  
+    api.registerTopicFooterButton({
+      id: "discourse-jump-button",
+      icon: "arrow-up",
+      priority: 0,
+    
+      translatedLabel() {
+        return settings.jump_button_label;
+      },
+      translatedTitle() {
+        return settings.jump_button_title;
+      },    
+      action() {
+        topicController.send('jumpTop');
+      },
+      classNames: ["discourse-jump-button"],
+    });
+    
+  }
+
+  
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="/connectors/before-topic-progress/mobile-scroll-buttons">
+
+    {{#if  (theme-setting "mobile_buttons_enabled")}}  
+      {{mount-widget widget="mobile-scroll-up-button"}}
+      {{mount-widget widget="mobile-scroll-down-button"}}
+    {{/if}}
+
+</script>
+
