@@ -26,13 +26,7 @@
         topicController.send('jumpBottom');
       }
     }); 
-   
-    api.decorateWidget('timeline-footer-controls:before', function(helper) {
-      return helper.attach('scroll-up-button');
-    });
-    api.decorateWidget('timeline-footer-controls:before', function(helper) {
-      return helper.attach('scroll-down-button');
-    });
+  
   
   }
 
@@ -94,3 +88,13 @@
 
 </script>
 
+<script type="text/x-handlebars" data-template-name="/connectors/timeline-footer-controls-after/desktop-scroll-buttons">
+
+  {{#if  (theme-setting "timeline_buttons_enabled")}}
+    <div class="timeline-buttons-desktop">
+    {{mount-widget widget="scroll-up-button"}}
+    {{mount-widget widget="scroll-down-button"}}
+    </div>
+  {{/if}}
+
+</script>
