@@ -3,8 +3,10 @@
   const { h } = require('virtual-dom');
   const { iconNode } = require("discourse-common/lib/icon-library");
   const { getOwner } = require("discourse-common/lib/get-owner");
-  const topicController = getOwner(this).lookup("controller:topic");
-
+  //const topicController = getOwner(this).lookup("controller:topic");
+  const container = Discourse.__container__;
+  const topicController = container.lookup('controller:topic');
+  
   if(settings.timeline_buttons_enabled){
 
     api.createWidget('scroll-up-button', {
