@@ -4,6 +4,10 @@
   column-gap: 0.5em;
 }
 
+#topic-progress-wrapper > span {
+    display: flex;
+}
+
 .mobile-scroll-buttons{
   display: flex;
   height: 100%;
@@ -16,3 +20,4 @@
 .discourse-mobile-scroll-down-button{
   height: 100%;
 }
+
