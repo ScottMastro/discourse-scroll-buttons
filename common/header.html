@@ -38,8 +38,8 @@
       html(attrs, state) {
         return h('span', [iconNode('arrow-up')] );
       },
-      click() {
-        topicController.send('jumpTop');
+      click(event) {
+        topicController.send('jumpTop', event);
       }
     });
 
@@ -48,8 +48,8 @@
       html(attrs, state) {
         return h('span', [iconNode('arrow-down')] );
       },
-      click() {
-        topicController.send('jumpBottom');
+      click(event) {
+        topicController.send('jumpBottom', event);
       }
     }); 
     
@@ -68,8 +68,8 @@
       translatedTitle() {
         return settings.jump_button_title;
       },    
-      action() {
-        topicController.send('jumpTop');
+      action(event) {
+        topicController.send('jumpTop', event);
       },
       classNames: ["discourse-jump-button"],
     });
