@@ -68,7 +68,7 @@
       translatedTitle() {
         return settings.jump_button_title;
       },    
-      action(event) {
+      click(event) {
         topicController.send('jumpTop', event);
       },
       classNames: ["discourse-jump-button"],
