@@ -5,6 +5,23 @@
   const { getOwner } = require("discourse-common/lib/get-owner");
   const container = Discourse.__container__;
   const topicController = container.lookup('controller:topic');
+
+  // Function to create a fake event that will cause wantsNewWindow to return true
+  function createFakeEvent() {
+    return {
+      defaultPrevented: false,
+      shiftKey: false,
+      metaKey: false, // Meta key is false
+      ctrlKey: false,
+      button: 0, // Primary button (left click)
+      currentTarget: {
+        target: "_self" // Simulate link opening in the same tab
+      },
+      preventDefault: () => {
+        console.log("Prevented default action");
+      }
+    };
+  }
   
   if(settings.timeline_buttons_enabled){
 
@@ -68,8 +85,8 @@
       translatedTitle() {
         return settings.jump_button_title;
       },    
-      click(event) {
-        topicController.send('jumpTop', event);
+      action() {
+        topicController.send('jumpTop', createFakeEvent());
       },
       classNames: ["discourse-jump-button"],
     });
