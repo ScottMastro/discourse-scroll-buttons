@@ -25,8 +25,8 @@
   
   if(settings.timeline_buttons_enabled){
 
-    api.createWidget('scroll-up-button', {
-      tagName: 'widget-button.btn.btn-default.discourse-scroll-up-button.no-text.btn-icon',
+    api.createWidget('jump-up-button', {
+      tagName: 'widget-button.btn.btn-default.discourse-jump-up-button.no-text.btn-icon',
       html(attrs, state) {
         return h('span', [iconNode('arrow-up')] );
       },
@@ -35,8 +35,8 @@
       }
     });
 
-    api.createWidget('scroll-down-button', {
-      tagName: 'widget-button.btn.btn-default.discourse-scroll-down-button.no-text.btn-icon',
+    api.createWidget('jump-down-button', {
+      tagName: 'widget-button.btn.btn-default.discourse-jump-down-button.no-text.btn-icon',
       html(attrs, state) {
         return h('span', [iconNode('arrow-down')] );
       },
@@ -50,8 +50,8 @@
 
   if (settings.mobile_buttons_enabled){
   
-    api.createWidget('mobile-scroll-up-button', {
-      tagName: 'widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-scroll-up-button',
+    api.createWidget('mobile-jump-up-button', {
+      tagName: 'widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-jump-up-button',
       html(attrs, state) {
         return h('span', [iconNode('arrow-up')] );
       },
@@ -60,8 +60,8 @@
       }
     });
 
-    api.createWidget('mobile-scroll-down-button', {
-      tagName: 'widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-scroll-down-button',
+    api.createWidget('mobile-jump-down-button', {
+      tagName: 'widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-jump-down-button',
       html(attrs, state) {
         return h('span', [iconNode('arrow-down')] );
       },
@@ -97,21 +97,21 @@
 </script>
 
 
-<script type="text/x-handlebars" data-template-name="/connectors/before-topic-progress/mobile-scroll-buttons">
+<script type="text/x-handlebars" data-template-name="/connectors/before-topic-progress/mobile-jump-buttons">
 
     {{#if  (theme-setting "mobile_buttons_enabled")}}  
-      {{mount-widget widget="mobile-scroll-up-button"}}
-      {{mount-widget widget="mobile-scroll-down-button"}}
+      {{mount-widget widget="mobile-jump-up-button"}}
+      {{mount-widget widget="mobile-jump-down-button"}}
     {{/if}}
 
 </script>
 
-<script type="text/x-handlebars" data-template-name="/connectors/timeline-footer-controls-after/desktop-scroll-buttons">
+<script type="text/x-handlebars" data-template-name="/connectors/timeline-footer-controls-after/desktop-jump-buttons">
 
   {{#if  (theme-setting "timeline_buttons_enabled")}}
     <div class="timeline-buttons-desktop">
-    {{mount-widget widget="scroll-up-button"}}
-    {{mount-widget widget="scroll-down-button"}}
+    {{mount-widget widget="jump-up-button"}}
+    {{mount-widget widget="jump-down-button"}}
     </div>
   {{/if}}
 
