@@ -21,19 +21,7 @@ export default apiInitializer("0.11.1", (api) => {
     };
   }
 
-  if (settings.timeline_buttons_enabled) {
-
-
-    api.createWidget("jump-down-button", {
-      tagName: "widget-button.btn.btn-default.discourse-jump-down-button.no-text.btn-icon",
-      html() {
-        return h("span", [iconNode("arrow-down")]);
-      },
-      click(event) {
-        topicController?.send("jumpEnd", event);
-      }
-    });
-  }
+  
 
   if (settings.mobile_buttons_enabled) {
     api.createWidget("mobile-jump-up-button", {
