@@ -1,11 +1,15 @@
 import { apiInitializer } from "discourse/lib/api";
 import { h } from "virtual-dom";
 import { iconNode } from "discourse-common/lib/icon-library";
-import { getOwner } from "discourse-common/lib/get-owner";
+import JumpUpButton from "../components/jump-up-button";
 
 export default apiInitializer("0.11.1", (api) => {
   const topicController = api.container.lookup("controller:topic");
   
+    if (settings.timeline_buttons_enabled) {
+      api.renderAfterWrapperOutlet("timeline-footer-controls-after", JumpUpButton);
+    }
+
   function createFakeEvent() {
     return {
       defaultPrevented: false,

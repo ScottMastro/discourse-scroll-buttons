@@ -8,7 +8,7 @@ export default class JumpUpButton extends Component {
 
   @action
   jumpTop() {
-    this.topic?.jumpToIndex(0); // equivalent to "jumpTop"
+    this.topic?.jumpToIndex(0);
   }
 
   static template = hbs`
