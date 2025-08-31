@@ -3,12 +3,15 @@ import { service } from "@ember/service";
 import { action } from "@ember/object";
 import { on } from "@ember/modifier";
 import icon from "discourse/helpers/d-icon";
+import { getOwner } from "@ember/application";
 
 export default class JumpUpButton extends Component {
-  @service topic;
+  get topicController() {
+    return getOwner(this).lookup("controller:topic");
+  }
 
   jumpTop() {
-    this.topic?.jumpToIndex(0);
+    this.topicController?.jumpToIndex(0);
   }
 
   <template>
