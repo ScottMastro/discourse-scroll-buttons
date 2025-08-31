@@ -4,8 +4,8 @@ import { iconNode } from "discourse-common/lib/icon-library";
 import { getOwner } from "discourse-common/lib/get-owner";
 
 export default apiInitializer("0.11.1", (api) => {
-  const topicController = getOwner(this)?.lookup("controller:topic");
-
+  const topicController = api.container.lookup("controller:topic");
+  
   function createFakeEvent() {
     return {
       defaultPrevented: false,
