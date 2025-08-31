@@ -3,9 +3,8 @@ import { h } from "virtual-dom";
 import { iconNode } from "discourse-common/lib/icon-library";
 import JumpUpButton from "../components/jump-up-button";
 
-export default apiInitializer("0.11.1", (api) => {
-  const topicController = api.container.lookup("controller:topic");
-  
+export default apiInitializer("0.11.1", () => {
+  withPluginApi("0.11.1", (api) => {
     if (settings.timeline_buttons_enabled) {
       api.renderAfterWrapperOutlet("timeline-footer-controls-after", JumpUpButton);
     }
@@ -78,4 +77,5 @@ export default apiInitializer("0.11.1", (api) => {
       classNames: ["discourse-jump-button"],
     });
   }
+})
 });
