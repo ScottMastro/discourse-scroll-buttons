@@ -4,7 +4,7 @@ import { action } from "@ember/object";
 import { on } from "@ember/modifier";
 import icon from "discourse/helpers/d-icon";
 
-export default class TimelineJumpButtons extends Component {
+export default class MobileJumpButtons extends Component {
   @controller topic;
 
   @action
@@ -21,10 +21,10 @@ export default class TimelineJumpButtons extends Component {
   }
 
   <template>
-      <div class="timeline-buttons-desktop">
+      <div id="mobile-jump-buttons">
         <button
           type="button"
-          class="btn btn-default discourse-jump-up-button no-text btn-icon"
+          class="btn btn-default popup-menu-button no-text btn-icon mobile-jump-up-button"
           {{on "click" this.jumpTop}}
         >
           {{icon "arrow-up"}}
@@ -32,11 +32,11 @@ export default class TimelineJumpButtons extends Component {
 
         <button
           type="button"
-          class="btn btn-default discourse-jump-down-button no-text btn-icon"
+          class="btn btn-default popup-menu-button no-text btn-icon mobile-jump-down-button"
           {{on "click" this.jumpDown}}
         >
           {{icon "arrow-down"}}
         </button>
       </div>
-  </template>
+    </template>
 }

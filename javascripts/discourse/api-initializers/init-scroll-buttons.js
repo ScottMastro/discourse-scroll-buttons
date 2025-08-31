@@ -21,29 +21,6 @@ export default apiInitializer("0.11.1", (api) => {
     };
   }
 
-  
-
-  if (settings.mobile_buttons_enabled) {
-    api.createWidget("mobile-jump-up-button", {
-      tagName: "widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-jump-up-button",
-      html() {
-        return h("span", [iconNode("arrow-up")]);
-      },
-      click(event) {
-        topicController?.send("jumpTop", event);
-      }
-    });
-
-    api.createWidget("mobile-jump-down-button", {
-      tagName: "widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-jump-down-button",
-      html() {
-        return h("span", [iconNode("arrow-down")]);
-      },
-      click(event) {
-        topicController?.send("jumpEnd", event);
-      }
-    });
-  }
 
   if (settings.jump_button_enabled) {
     api.registerTopicFooterButton({
