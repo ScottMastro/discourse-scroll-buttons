@@ -3,6 +3,7 @@ import { inject as controller } from "@ember/controller";
 import { action } from "@ember/object";
 import { on } from "@ember/modifier";
 import icon from "discourse/helpers/d-icon";
+import themeSetting from "discourse/helpers/theme-setting";
 
 export default class JumpUpButton extends Component {
   @controller topic;
