@@ -24,7 +24,7 @@ export default class TimelineJumpButtons extends Component {
       <div id="timeline-buttons-desktop">
         <button
           type="button"
-          class="btn btn-default discourse-jump-up-button no-text btn-icon"
+          class="btn btn-default jump-up-button no-text btn-icon"
           {{on "click" this.jumpTop}}
         >
           {{icon "arrow-up"}}
@@ -32,7 +32,7 @@ export default class TimelineJumpButtons extends Component {
 
         <button
           type="button"
-          class="btn btn-default discourse-jump-down-button no-text btn-icon"
+          class="btn btn-default jump-down-button no-text btn-icon"
           {{on "click" this.jumpDown}}
         >
           {{icon "arrow-down"}}

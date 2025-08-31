@@ -1,6 +1,6 @@
 {
-  "name": "discourse-scroll-buttons",
-  "about_url": "https://github.com/ScottMastro/discourse-scroll-buttons",
+  "name": "discourse-jump-buttons",
+  "about_url": "https://github.com/ScottMastro/discourse-jump-buttons",
   "component": "true",
-  "license_url": "https://github.com/ScottMastro/discourse-scroll-buttons/blob/master/LICENSE"
+  "license_url": "https://github.com/ScottMastro/discourse-jump-buttons/blob/master/LICENSE"
 }

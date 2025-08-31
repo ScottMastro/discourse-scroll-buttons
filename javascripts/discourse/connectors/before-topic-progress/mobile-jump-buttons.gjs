@@ -17,7 +17,7 @@ export default class MobileJumpButtons extends Component {
   }
 
   static shouldRender(args) {
-    return settings.timeline_buttons_enabled;
+    return settings.mobile_buttons_enabled;
   }
 
   <template>

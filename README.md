@@ -1,6 +1,6 @@
-# discourse-scroll-buttons
+# discourse-jump-buttons
 
-https://meta.discourse.org/t/buttons-for-scrolling-to-the-top-bottom-of-topics/240412
+https://meta.discourse.org/t/buttons-for-jumping-to-the-top-bottom-of-topics/240412
 
 This theme component adds buttons that enable efficient jumping to the beginning and end of topics.
 
