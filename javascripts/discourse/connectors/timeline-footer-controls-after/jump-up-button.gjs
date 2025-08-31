@@ -17,7 +17,6 @@ export default class JumpUpButton extends Component {
   }
 
   <template>
-    {{#if (settings.timeline_buttons_enabled)}}
       <button
         type="button"
         class="btn btn-default discourse-jump-up-button no-text btn-icon"
@@ -25,6 +24,5 @@ export default class JumpUpButton extends Component {
       >
         {{icon "arrow-up"}}
       </button>
-    {{/if}}
   </template>
 }
