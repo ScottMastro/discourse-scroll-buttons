@@ -1,15 +1,10 @@
 import { apiInitializer } from "discourse/lib/api";
-import { withPluginApi } from "discourse/lib/plugin-api";
 import { h } from "virtual-dom";
 import { iconNode } from "discourse-common/lib/icon-library";
-import JumpUpButton from "../components/jump-up-button";
 
-export default apiInitializer("0.11.1", () => {
-  withPluginApi("0.11.1", (api) => {
-    if (settings.timeline_buttons_enabled) {
-      api.renderAfterWrapperOutlet("timeline-footer-controls-after", JumpUpButton);
-    }
-
+export default apiInitializer("0.11.1", (api) => {
+  const topicController = api.container.lookup("controller:topic");
+  
   function createFakeEvent() {
     return {
       defaultPrevented: false,
@@ -27,6 +22,7 @@ export default apiInitializer("0.11.1", () => {
   }
 
   if (settings.timeline_buttons_enabled) {
+
 
     api.createWidget("jump-down-button", {
       tagName: "widget-button.btn.btn-default.discourse-jump-down-button.no-text.btn-icon",
@@ -78,5 +74,4 @@ export default apiInitializer("0.11.1", () => {
       classNames: ["discourse-jump-button"],
     });
   }
-})
 });

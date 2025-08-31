@@ -1,23 +1,35 @@
 import Component from "@glimmer/component";
-import { action } from "@ember/object";
-import { inject as service } from "@ember/service";
-import { hbs } from "ember-cli-htmlbars";
+import { withPluginApi } from "discourse/lib/plugin-api";
 
-export default class JumpUpButton extends Component {
-  @service topic;
 
-  @action
-  jumpTop() {
-    this.topic?.jumpToIndex(0);
-  }
 
-  static template = hbs`
-    <button
-      type="button"
-      class="btn btn-default discourse-jump-up-button no-text btn-icon"
-      {{on "click" this.jumpTop}}
-    >
-      {{d-icon "arrow-up"}}
-    </button>
-  `;
+function addUpArrow(api) {
+  api.renderBeforeWrapperOutlet(
+    "timeline-footer-controls-after",
+    class extends Component {
+      static shouldRender(args) {
+        return true;
+      }
+
+      <template>
+        <button
+        type="button"
+        class="btn btn-default discourse-jump-up-button no-text btn-icon"
+        {{on "click" console.log("Jump Up Button Clicked")}}
+        >
+        {{d-icon "arrow-up"}}
+        </button>
+      </template>
+    }
+  );
 }
+
+export default {
+  name: "add-jump-buttons",
+  initialize() {
+    withPluginApi((api) => {
+      // ... other customizations
+      addUpArrow(api);
+    });
+  }
+};
