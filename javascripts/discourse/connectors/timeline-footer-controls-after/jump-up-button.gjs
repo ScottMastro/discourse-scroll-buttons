@@ -1,20 +1,15 @@
 import Component from "@glimmer/component";
-import { service } from "@ember/service";
+import { inject as controller } from "@ember/controller";
 import { action } from "@ember/object";
 import { on } from "@ember/modifier";
 import icon from "discourse/helpers/d-icon";
-import { getOwner } from "@ember/application";
 
 export default class JumpUpButton extends Component {
-  get topicController() {
-    return getOwner(this).lookup("controller:topic");
-  }
+  @controller topic;
 
-  jumpTop() {
-    const tc = this.topicController;
-    console.log("Jump Up Button Clicked", tc);
-
-    tc?.jumpToIndex(0);
+  @action
+  jumpTop(event) {
+    this.topic.send("jumpTop", event);
   }
 
   <template>
