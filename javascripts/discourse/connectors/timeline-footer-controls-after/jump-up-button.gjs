@@ -11,7 +11,7 @@ export default class JumpUpButton extends Component {
   }
 
   jumpTop() {
-    const tc = this.topicController();
+    const tc = this.topicController;
     console.log("Jump Up Button Clicked", tc);
 
     tc?.jumpToIndex(0);
