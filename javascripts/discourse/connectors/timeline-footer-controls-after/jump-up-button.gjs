@@ -17,7 +17,7 @@ export default class JumpUpButton extends Component {
       class="btn btn-default discourse-jump-up-button no-text btn-icon"
       {{on "click" this.jumpTop}}
     >
-      {{d-icon "arrow-up"}}
+      {{icon "arrow-up"}}
     </button>
   </template>
 }
