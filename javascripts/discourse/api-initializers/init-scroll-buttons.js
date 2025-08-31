@@ -1,4 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
+import { withPluginApi } from "discourse/lib/plugin-api";
 import { h } from "virtual-dom";
 import { iconNode } from "discourse-common/lib/icon-library";
 import JumpUpButton from "../components/jump-up-button";
