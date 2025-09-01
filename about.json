@@ -3,5 +3,6 @@
   "about_url": "https://meta.discourse.org/t/buttons-for-scrolling-to-the-top-bottom-of-topics/240412",
   "component": "true",
   "authors": "ScottMastro",
-  "license_url": "https://github.com/ScottMastro/discourse-jump-buttons/blob/master/LICENSE"
+  "license_url": "https://github.com/ScottMastro/discourse-jump-buttons/blob/master/LICENSE",
+  "theme_version": "1.2"
 }
