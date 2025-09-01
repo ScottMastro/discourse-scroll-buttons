@@ -1,6 +1,6 @@
 {
-  "name": "discourse-jump-buttons",
-  "about_url": "https://github.com/ScottMastro/discourse-jump-buttons",
+  "name": "Discourse Jump Buttons",
+  "about_url": "https://meta.discourse.org/t/buttons-for-scrolling-to-the-top-bottom-of-topics/240412",
   "component": "true",
   "license_url": "https://github.com/ScottMastro/discourse-jump-buttons/blob/master/LICENSE"
 }
