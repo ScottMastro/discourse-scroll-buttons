@@ -1,4 +1,4 @@
-# Discourse Jump Buttons
+# Discourse Jump Buttons - Theme Component
 
 https://meta.discourse.org/t/buttons-for-jumping-to-the-top-bottom-of-topics/240412
 
